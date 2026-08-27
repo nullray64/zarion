@@ -1,0 +1,14 @@
+### /etc/systemd/system/zarion_bot.service
+[Unit]
+Description=Zarion Discord Bot Service
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/opt/zarion_bot
+ExecStart=/opt/zarion_bot/venv/bin/python main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
